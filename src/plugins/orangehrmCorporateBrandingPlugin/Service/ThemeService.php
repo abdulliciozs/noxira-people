@@ -24,6 +24,7 @@ use OrangeHRM\Core\Traits\CacheTrait;
 use OrangeHRM\Core\Traits\ETagHelperTrait;
 use OrangeHRM\CorporateBranding\Dao\ThemeDao;
 use OrangeHRM\CorporateBranding\Dto\PartialTheme;
+use OrangeHRM\CorporateBranding\Dto\NoxiraThemeDefaults;
 use OrangeHRM\CorporateBranding\Dto\ThemeImage;
 use OrangeHRM\CorporateBranding\Dto\ThemeVariables;
 use OrangeHRM\Framework\Http\Request;
@@ -150,10 +151,10 @@ class ThemeService
             self::THEME_VARIABLES_CACHE_KEY,
             function () {
                 $theme = $this->getThemeDao()->getPartialThemeByThemeName(ThemeService::CUSTOM_THEME);
-                if (!$theme instanceof PartialTheme) {
-                    $theme = $this->getThemeDao()->getPartialThemeByThemeName(ThemeService::DEFAULT_THEME);
-                }
-                return $this->getDerivedCssVariables(ThemeVariables::createFromArray($theme->getVariables()));
+                $variables = $theme instanceof PartialTheme
+                    ? $theme->getVariables()
+                    : NoxiraThemeDefaults::getVariables();
+                return $this->getDerivedCssVariables(ThemeVariables::createFromArray($variables));
             }
         );
     }
@@ -167,10 +168,9 @@ class ThemeService
             self::THEME_SHOW_SOCIAL_MEDIA_IMAGES_CACHE_KEY,
             function () {
                 $theme = $this->getThemeDao()->getPartialThemeByThemeName(ThemeService::CUSTOM_THEME);
-                if (!$theme instanceof PartialTheme) {
-                    $theme = $this->getThemeDao()->getPartialThemeByThemeName(ThemeService::DEFAULT_THEME);
-                }
-                return $theme->showSocialMediaIcons();
+                return $theme instanceof PartialTheme
+                    ? $theme->showSocialMediaIcons()
+                    : NoxiraThemeDefaults::SHOW_SOCIAL_MEDIA_ICONS;
             }
         );
     }
@@ -229,7 +229,7 @@ class ThemeService
         if ($this->getImageETag('client_logo') !== null) {
             return $request->getBaseUrl() . "/admin/theme/image/clientLogo?v=$assetsVersion";
         }
-        return $request->getBasePath() . "/images/orange.png?v=$assetsVersion";
+        return $request->getBasePath() . "/images/noxira-people-icon.svg?v=$assetsVersion";
     }
 
     /**
@@ -242,7 +242,7 @@ class ThemeService
         if ($this->getImageETag('client_banner') !== null) {
             return $request->getBaseUrl() . "/admin/theme/image/clientBanner?v=$assetsVersion";
         }
-        return $request->getBasePath() . "/images/orangehrm-logo.png?v=$assetsVersion";
+        return $request->getBasePath() . "/images/noxira-people-lockup.svg?v=$assetsVersion";
     }
 
     /**
@@ -255,6 +255,7 @@ class ThemeService
         if ($this->getImageETag('login_banner') !== null) {
             return $request->getBaseUrl() . "/admin/theme/image/loginBanner?v=$assetsVersion";
         }
-        return $request->getBasePath() . "/images/ohrm_branding.png?v=$assetsVersion";
+        return $request->getBasePath() . "/images/noxira-people-lockup.svg?v=$assetsVersion";
     }
 }
+

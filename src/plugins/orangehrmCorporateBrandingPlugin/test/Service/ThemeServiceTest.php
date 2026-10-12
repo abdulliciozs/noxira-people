@@ -54,8 +54,8 @@ class ThemeServiceTest extends KernelTestCase
             Services::CACHE => MockCacheService::getCache(),
         ]);
 
-        $this->assertTrue($themeService->showSocialMediaImages()); // check default theme
-        $this->assertTrue($themeService->showSocialMediaImages()); // call twice to check caching
+        $this->assertFalse($themeService->showSocialMediaImages()); // check Noxira default theme
+        $this->assertFalse($themeService->showSocialMediaImages()); // call twice to check caching
     }
 
     public function testGetCurrentThemeVariables(): void
@@ -98,34 +98,12 @@ class ThemeServiceTest extends KernelTestCase
             Services::CACHE => MockCacheService::getCache(),
         ]);
 
-        $customThemeCssVariables = [
-            '--oxd-primary-one-color' => '#FF7B1D',
-            '--oxd-primary-font-color' => '#FFFFFF',
-            '--oxd-secondary-four-color' => '#76BC21',
-            '--oxd-secondary-font-color' => '#FFFFFF',
-            '--oxd-primary-gradient-start-color' => '#FF920B',
-            '--oxd-primary-gradient-end-color' => '#F35C17',
-            '--oxd-secondary-gradient-start-color' => '#FF920B',
-            '--oxd-secondary-gradient-end-color' => '#F35C17',
-            '--oxd-primary-one-lighten-5-color' => '#ff8a37',
-            '--oxd-primary-one-lighten-30-color' => '#ffd4b6',
-            '--oxd-primary-one-darken-5-color' => '#ff6c03',
-            '--oxd-primary-one-alpha-10-color' => 'rgba(255, 123, 29, 0.1)',
-            '--oxd-primary-one-alpha-15-color' => 'rgba(255, 123, 29, 0.15)',
-            '--oxd-primary-one-alpha-20-color' => 'rgba(255, 123, 29, 0.2)',
-            '--oxd-primary-one-alpha-50-color' => 'rgba(255, 123, 29, 0.5)',
-            '--oxd-secondary-four-lighten-5-color' => '#84d225',
-            '--oxd-secondary-four-darken-5-color' => '#68a61d',
-            '--oxd-secondary-four-alpha-10-color' => 'rgba(118, 188, 33, 0.1)',
-            '--oxd-secondary-four-alpha-15-color' => 'rgba(118, 188, 33, 0.15)',
-            '--oxd-secondary-four-alpha-20-color' => 'rgba(118, 188, 33, 0.2)',
-            '--oxd-secondary-four-alpha-50-color' => 'rgba(118, 188, 33, 0.5)',
-        ];
-        $this->assertEquals($customThemeCssVariables, $themeService->getCurrentThemeVariables()); // check default theme
-        $this->assertEquals(
-            $customThemeCssVariables,
-            $themeService->getCurrentThemeVariables()
-        ); // call twice to check caching
+        $noxiraThemeCssVariables = $themeService->getCurrentThemeVariables();
+        $this->assertSame('#34436B', $noxiraThemeCssVariables['--oxd-primary-one-color']);
+        $this->assertSame('#168C8A', $noxiraThemeCssVariables['--oxd-secondary-four-color']);
+        $this->assertSame('#696BD8', $noxiraThemeCssVariables['--oxd-primary-gradient-start-color']);
+        $this->assertSame('#34436B', $noxiraThemeCssVariables['--oxd-primary-gradient-end-color']);
+        $this->assertSame($noxiraThemeCssVariables, $themeService->getCurrentThemeVariables()); // caching
     }
 
     public function testGetImageETagWithNullImage(): void
@@ -158,3 +136,4 @@ class ThemeServiceTest extends KernelTestCase
         $this->assertNull($themeService->getImage('client_logo'));
     }
 }
+

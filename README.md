@@ -1,61 +1,34 @@
-<img width="40%" alt='OrangeHRM' src='https://raw.githubusercontent.com/wiki/orangehrm/orangehrm/logos/logo.svg#gh-light-mode-only'/><img width="40%" alt='OrangeHRM' src='https://raw.githubusercontent.com/wiki/orangehrm/orangehrm/logos/logo_dark_mode.svg#gh-dark-mode-only'/>
+# Noxira People
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/orangehrm/orangehrm.svg)](https://hub.docker.com/r/orangehrm/orangehrm) [![SourceForge Downloads](https://img.shields.io/sourceforge/dm/orangehrm.svg)](https://sourceforge.net/projects/orangehrm/) [![SourceForge Downloads](https://img.shields.io/sourceforge/dt/orangehrm.svg)](https://sourceforge.net/projects/orangehrm/)
+Noxira People is a rebranded and modified fork of [OrangeHRM Starter 5.9](https://github.com/orangehrm/orangehrm), maintained in the [Noxira People repository](https://github.com/abdulliciozs/noxira-people). It retains OrangeHRM's PHP/Symfony and Vue application architecture and its existing HR workflows; it was not built from scratch.
 
-# OrangeHRM Starter Application
+The fork keeps the upstream GPL license and copyright notices. Noxira People is an independent project and is not affiliated with or endorsed by OrangeHRM. See [LICENSE](LICENSE) and [MODIFICATIONS.md](MODIFICATIONS.md) for license and source details.
 
-OrangeHRM is a comprehensive Human Resource Management (HRM) System that captures all the essential functionalities required for any enterprise. Copyright (C) 2006 OrangeHRM Inc., http://www.orangehrm.com/
+## What it includes
 
-OrangeHRM is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+The existing application source includes employee and personnel records, recruitment, leave, time and attendance, performance, a corporate directory, Buzz, claims, administration and role permissions, authentication integrations, corporate branding, and reporting. Availability of individual features depends on the installed configuration and enabled modules.
 
-OrangeHRM is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This change updates visible product branding, default theme colors, logos, favicon, page titles, login and installer presentation, and the About/legal notice. It preserves the upstream application and its existing feature set.
 
-## Getting started
+## Development setup
 
-- Download the latest version of OrangeHRM Starter [here](https://sourceforge.net/projects/orangehrm/files/latest/download).
+The root `Dockerfile` is inherited upstream packaging for an official OrangeHRM release; it does not build this fork's source. For local development, use the upstream [OrangeHRM OS development environment](https://github.com/orangehrm/orangehrm-os-dev-environment), following its current environment setup and service documentation.
 
-- Prerequisites and environment set up for installing OrangeHRM Starter:
-  - [Install on Linux](https://starterhelp.orangehrm.com/hc/en-us/articles/6187572000540-Prerequisites-for-installing-OrangeHRM-Starter-in-Linux)
-  - [Install on Windows](https://starterhelp.orangehrm.com/hc/en-us/articles/6187576427804-Prerequisites-for-installing-OrangeHRM-Starter-in-Windows)
+In that environment, configure `LOCAL_SRC` to the parent directory containing this checkout, so it mounts as `/var/www/noxira-people`. Configure the companion environment file, database, and local host routing as its guide specifies. Build and start its documented PHP, MariaDB, and nginx services, then install the PHP dependencies in `src` and `devTools/core`, and install/build the Vue applications in `src/client` and `installer/client`. The web installer is served at `/noxira-people/installer/`; complete it against the configured database before opening the application.
 
-- Install OrangeHRM using the web installer:
-  - [OrangeHRM Starter Installation Guide](https://starterhelp.orangehrm.com/hc/en-us/articles/5295915003666-OrangeHRM-Starter-Installation-Guide)
-  - [OrangeHRM Starter Upgrade Guide](https://starterhelp.orangehrm.com/hc/en-us/articles/6937346912402-OrangeHRM-Starter-Upgrade-Guide-For-5x-versions-)
+Use fictional employee and organization data in development and screenshots. Do not commit database dumps, credentials, uploaded employee files, or personal data.
 
-- For further information on how to use the product please refer to the User Guides, Tutorial videos, and FAQs available on [Help Portal](https://starterhelp.orangehrm.com)
+The supported source stack is described in `AGENTS.md` and the companion environment repository. This checkout has not been run or built in the current environment. PHP, Composer, Docker, Yarn, and a usable database runtime were unavailable here, so setup and application flows have not been verified locally.
 
-## Using AI coding agents
+## Tests
 
-This repo ships guidance for AI coding agents under [`.agents/`](.agents/) — [`AGENTS.md`](AGENTS.md) is the entry point.
+The upstream source includes PHPUnit tests and Vue unit tests. Run them using the commands and database/bootstrap requirements in `AGENTS.md`, `src/client/package.json`, and the companion development environment guide. No tests were run for this branding change because the required toolchain and database were unavailable.
 
-**Open the repo in your coding agent and just say Hi** — it'll check what's set up and walk you through the rest.
+## Screenshots and demo
 
-> If that doesn't kick things off, prompt it: *"Please follow `.agents/SETUP.md` to set yourself up for this project."*
+No application screenshots are included: the application could not be launched here, and this repository contains no genuine post-change captures. There is no live demo link. Screenshots should be captured from a running instance using fictional data after installation.
 
-## OrangeHRM Mobile App
+## Attribution and license
 
-<a href="https://play.google.com/store/apps/details?id=com.orangehrm.opensource" target="_blank">
-<img height="54" alt='Get it on Google Play'
-    src='https://raw.githubusercontent.com/wiki/orangehrm/orangehrm/mobile/play_store_cropped_en_US_2022_08_04.png'/>
-</a>
-<a href="https://apps.apple.com/us/app/orangehrm/id1527247547" target="_blank">
-<img height="54" alt='Download on the App Store'
-    src='https://raw.githubusercontent.com/wiki/orangehrm/orangehrm/mobile/app_store_en_US.svg'/>
-</a>
+Copyright � 2006 OrangeHRM Inc. The original source and this fork are distributed under the GNU General Public License, version 3 or (at your option) any later version. See [LICENSE](LICENSE) for the full license text and [MODIFICATIONS.md](MODIFICATIONS.md) for the fork's branding changes and source attribution. Existing upstream copyright and license headers remain in place.
 
-## Resources
-
-### Demo
-Live demo is available at : https://opensource-demo.orangehrmlive.com
-
-### Releases
-Sourceforge : https://sourceforge.net/p/orangehrm
-
-### Website
-https://www.orangehrm.com/
-
-## Help & Support
-Submit your help requests through [OrangeHRM Help Portal](https://starterhelp.orangehrm.com/hc/en-us/requests/new) or Email to [ossupport@orangehrm.com](mailto:ossupport@orangehrm.com)
-
-## License 
-GNU General Public License

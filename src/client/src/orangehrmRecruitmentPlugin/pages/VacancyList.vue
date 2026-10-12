@@ -57,7 +57,7 @@ export default {
     'oxd-loading-spinner': OxdSpinner,
   },
   setup() {
-    const defaultPic = `${window.appGlobal.publicPath}/images/ohrm_branding.png`;
+    const defaultPic = `${window.appGlobal.publicPath}/images/noxira-people-lockup.svg`;
     const vacancyDataNormalizer = (data) => {
       return data.map((item) => {
         return {
@@ -90,3 +90,4 @@ export default {
 </script>
 
 <style src="./public-job-vacancy.scss" lang="scss" scoped></style>
+

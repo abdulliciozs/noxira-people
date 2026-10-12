@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="orangehrm-installer-header">
-      <img :src="brandingSrc" width="280" alt="orangehrm-branding" />
+      <img :src="brandingSrc" width="280" alt="Noxira People" />
     </div>
     <div class="orangehrm-installer-content">
       <slot></slot>
@@ -72,10 +72,11 @@ export default {
   },
   data() {
     return {
-      brandingSrc: `${window.appGlobal.publicPath}/client/public/ohrm_branding.png`,
+      brandingSrc: `${window.appGlobal.publicPath}/client/public/noxira-people-lockup.svg`,
     };
   },
 };
 </script>
 
 <style src="./installer-layout.scss" lang="scss" scoped></style>
+

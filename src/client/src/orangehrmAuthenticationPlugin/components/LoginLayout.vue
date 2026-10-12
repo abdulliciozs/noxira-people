@@ -25,14 +25,14 @@
           <login-branding :img-src="loginBannerSrc"></login-branding>
           <div class="orangehrm-login-slot">
             <div class="orangehrm-login-logo-mobile">
-              <img :src="loginLogoSrc" alt="orangehrm-logo" />
+              <img :src="loginLogoSrc" alt="Noxira People" />
             </div>
             <slot></slot>
           </div>
         </div>
       </div>
       <div class="orangehrm-login-logo">
-        <img :src="loginLogoSrc" alt="orangehrm-logo" />
+        <img :src="loginLogoSrc" alt="Noxira People" />
       </div>
     </div>
   </div>
@@ -60,3 +60,4 @@ export default {
 </script>
 
 <style src="./login-layout.scss" lang="scss" scoped></style>
+

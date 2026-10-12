@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 88" role="img" aria-labelledby="title">
+  <title id="title">Noxira People</title>
+  <defs>
+    <linearGradient id="noxira" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#34436B"/>
+      <stop offset="1" stop-color="#696BD8"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="16" width="56" height="56" rx="17" fill="url(#noxira)"/>
+  <path d="M20 59V29h8l14 17V29h8v30h-8L28 42v17z" fill="#fff"/>
+  <circle cx="55" cy="27" r="4" fill="#37D7C2"/>
+  <text x="80" y="47" fill="#243454" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="31" font-weight="700">Noxira</text>
+  <text x="82" y="69" fill="#168C8A" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="2.4">PEOPLE</text>
+</svg>
+

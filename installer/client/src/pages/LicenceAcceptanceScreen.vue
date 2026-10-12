@@ -27,7 +27,7 @@
     </oxd-text>
     <br />
     <oxd-text class="orangehrm-installer-page-content">
-      Please review the license terms before installing OrangeHRM Starter.
+      Please review the license terms before installing Noxira People, a modified OrangeHRM Starter application.
     </oxd-text>
     <br />
 
@@ -38,7 +38,7 @@
 
     <oxd-text tag="p" class="orangehrm-installer-page-content">
       If you accept the terms of the agreement, select the first option below.
-      You must accept the agreement to install OrangeHRM. Click <b>Next</b> to
+      You must accept the agreement to install Noxira People. Click <b>Next</b> to
       continue
     </oxd-text>
 
@@ -100,3 +100,4 @@ export default {
 };
 </script>
 <style src="./installer-page.scss" lang="scss" scoped></style>
+

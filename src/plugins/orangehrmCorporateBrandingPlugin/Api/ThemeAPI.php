@@ -35,6 +35,7 @@ use OrangeHRM\Core\Traits\ValidatorTrait;
 use OrangeHRM\CorporateBranding\Api\Model\ThemeModel;
 use OrangeHRM\CorporateBranding\Api\Traits\VariablesParamRuleCollection;
 use OrangeHRM\CorporateBranding\Api\ValidationRules\ImageAspectRatio;
+use OrangeHRM\CorporateBranding\Dto\NoxiraThemeDefaults;
 use OrangeHRM\CorporateBranding\Dto\PartialTheme;
 use OrangeHRM\CorporateBranding\Service\ThemeService;
 use OrangeHRM\CorporateBranding\Traits\ThemeServiceTrait;
@@ -88,9 +89,18 @@ class ThemeAPI extends Endpoint implements ResourceEndpoint
             ->getPartialThemeByThemeName(ThemeService::CUSTOM_THEME);
 
         if (!$theme instanceof PartialTheme) {
-            $theme = $this->getThemeService()
+            $defaultTheme = $this->getThemeService()
                 ->getThemeDao()
                 ->getPartialThemeByThemeName();
+            $theme = new PartialTheme(
+                $defaultTheme->getId(),
+                $defaultTheme->getName(),
+                NoxiraThemeDefaults::getVariables(),
+                NoxiraThemeDefaults::SHOW_SOCIAL_MEDIA_ICONS,
+                $defaultTheme->getClientLogoFilename(),
+                $defaultTheme->getClientBannerFilename(),
+                $defaultTheme->getLoginBannerFilename()
+            );
         }
 
         return new EndpointResourceResult(ThemeModel::class, $theme);
@@ -405,3 +415,4 @@ class ThemeAPI extends Endpoint implements ResourceEndpoint
         return $paramRules;
     }
 }
+

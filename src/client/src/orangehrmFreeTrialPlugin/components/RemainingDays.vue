@@ -74,7 +74,7 @@ export default {
   },
   data() {
     return {
-      freeTrialCompanyLogo: `${window.appGlobal.publicPath}/images/ohrm_logo.png`,
+      freeTrialCompanyLogo: `${window.appGlobal.publicPath}/images/noxira-people-icon.svg`,
     };
   },
   methods: {
@@ -85,3 +85,4 @@ export default {
 };
 </script>
 <style src="./remain-days.scss" lang="scss" scoped></style>
+

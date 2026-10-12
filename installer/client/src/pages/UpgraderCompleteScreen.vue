@@ -5,7 +5,7 @@
     </oxd-text>
     <br />
     <oxd-text tag="p" class="orangehrm-installer-page-content">
-      You have successfully upgraded to OrangeHRM Starter version
+      You have successfully upgraded to Noxira People version
       {{ productversion }}.
     </oxd-text>
     <br />
@@ -13,7 +13,7 @@
     <oxd-button
       class="orangehrm-upgrader-complete-button"
       display-type="secondary"
-      label="Launch OrangeHRM"
+      label="Launch Noxira People"
       @click="launch"
     />
   </div>
@@ -47,3 +47,4 @@ export default {
   margin-right: auto;
 }
 </style>
+

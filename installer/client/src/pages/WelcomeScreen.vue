@@ -19,12 +19,12 @@
 <template>
   <oxd-form class="orangehrm-installer-page" @submit="toggleModal">
     <oxd-text tag="h5" class="orangehrm-installer-page-title">
-      Welcome to OrangeHRM Starter Version {{ productversion }} Setup Wizard
+      Welcome to Noxira People Version {{ productversion }} Setup Wizard
     </oxd-text>
     <br />
     <oxd-text tag="p" class="orangehrm-installer-page-content">
-      This setup wizard will guide through the steps necessary to install/
-      upgrade OrangeHRM Starter components and their dependencies.
+      This setup wizard will guide you through installing or upgrading Noxira
+      People and its dependencies. Noxira People is based on OrangeHRM Starter.
     </oxd-text>
     <br />
     <oxd-text tag="p" class="orangehrm-installer-page-content">
@@ -38,7 +38,7 @@
         option-label="Fresh Installation"
       />
       <oxd-text tag="p" class="orangehrm-installer-page-content --label">
-        Choose this option if you are installing OrangeHRM Starter for the first
+        Choose this option if you are installing Noxira People for the first
         time
       </oxd-text>
     </oxd-form-row>
@@ -50,8 +50,8 @@
         option-label="Upgrading an Existing Installation"
       />
       <oxd-text tag="p" class="orangehrm-installer-page-content --label">
-        Choose this option if you are already using a prior version of OrangeHRM
-        Starter (version 4.0 onwards) and would like to upgrade to
+        Choose this option if you are already using a compatible Noxira People
+        release (version 4.0 onwards) and would like to upgrade to
         <b>version {{ productversion }}</b>
       </oxd-text>
     </oxd-form-row>
@@ -115,3 +115,4 @@ export default {
   margin-left: -0.5rem;
 }
 </style>
+

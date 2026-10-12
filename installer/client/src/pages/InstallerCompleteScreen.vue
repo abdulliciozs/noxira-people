@@ -23,7 +23,7 @@
     </oxd-text>
     <br />
     <oxd-text tag="p" class="orangehrm-installer-page-content">
-      OrangeHRM Starter Version {{ productversion }} has been successfully
+      Noxira People Version {{ productversion }} has been successfully
       installed.
     </oxd-text>
     <br />
@@ -31,7 +31,7 @@
     <oxd-button
       class="orangehrm-installer-complete-button"
       display-type="secondary"
-      label="Launch OrangeHRM"
+      label="Launch Noxira People"
       @click="launch"
     />
   </div>
@@ -61,3 +61,4 @@ export default {
   margin-right: auto;
 }
 </style>
+

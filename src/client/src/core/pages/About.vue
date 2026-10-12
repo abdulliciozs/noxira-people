@@ -77,6 +77,24 @@
         </oxd-grid-item>
       </template>
     </oxd-grid>
+    <oxd-divider />
+    <div class="orangehrm-about-legal">
+      <oxd-text tag="p">
+        Noxira People is a modified version of OrangeHRM Starter 5.9.
+        Copyright &#169; 2006 OrangeHRM Inc. Modified on 2026-10-12. This fork
+        is independent and is not affiliated with or endorsed by OrangeHRM.
+      </oxd-text>
+      <oxd-text tag="p">
+        Licensed under the GNU General Public License version 3 or later. This
+        program comes without warranty and may be redistributed under that
+        license. Read the
+        <a
+          href="https://github.com/abdulliciozs/noxira-people/blob/main/LICENSE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >full license</a>.
+      </oxd-text>
+    </div>
   </oxd-dialog>
 </template>
 
@@ -140,4 +158,14 @@ export default {
     font-weight: 700;
   }
 }
+.orangehrm-about-legal {
+  padding: 0.5rem 0 0;
+  font-size: $oxd-input-control-font-size;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  & a {
+    color: $oxd-primary-one-color;
+  }
+}
 </style>
+

@@ -86,7 +86,7 @@ class AuthorizationController extends AbstractVueController implements PublicCon
             new Prop(
                 'login-banner-src',
                 Prop::TYPE_STRING,
-                $request->getBasePath() . "/images/ohrm_branding.png?v=$assetsVersion"
+                $request->getBasePath() . "/images/noxira-people-lockup.svg?v=$assetsVersion"
             )
         );
 
@@ -94,3 +94,4 @@ class AuthorizationController extends AbstractVueController implements PublicCon
         $this->setTemplate('no_header.html.twig');
     }
 }
+

@@ -51,7 +51,7 @@ class Config
     public const MODE_DEMO = 'demo';
     public const MODE_TRIAL = 'trial';
 
-    public const PRODUCT_NAME = 'OrangeHRM OS';
+    public const PRODUCT_NAME = 'Noxira People';
     public const PRODUCT_VERSION = '5.9';
     public const ORANGEHRM_API_VERSION = '2.8.0';
     public const PRODUCT_MODE = self::MODE_DEV;
@@ -169,3 +169,4 @@ class Config
         return self::$conf;
     }
 }
+
