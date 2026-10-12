@@ -30,5 +30,5 @@ No application screenshots are included: the application could not be launched h
 
 ## Attribution and license
 
-Copyright � 2006 OrangeHRM Inc. The original source and this fork are distributed under the GNU General Public License, version 3 or (at your option) any later version. See [LICENSE](LICENSE) for the full license text and [MODIFICATIONS.md](MODIFICATIONS.md) for the fork's branding changes and source attribution. Existing upstream copyright and license headers remain in place.
+Copyright &#169; 2006 OrangeHRM Inc. The original source and this fork are distributed under the GNU General Public License, version 3 or (at your option) any later version. See [LICENSE](LICENSE) for the full license text and [MODIFICATIONS.md](MODIFICATIONS.md) for the fork's branding changes and source attribution. Existing upstream copyright and license headers remain in place.
 
